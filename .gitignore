@@ -1,16 +1,11 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# HydroFlow monorepo ignores
 node_modules/
 
-# Expo
+# Expo / React Native
 .expo/
 dist/
 web-build/
 expo-env.d.ts
-
-# Native
-.kotlin/
 *.orig.*
 *.jks
 *.p8
@@ -18,24 +13,36 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
+# Local server runtime data
+server/data/
+server/dist/
+
+# Native build output (CNG generates these on demand)
+ios/
+android/
+
+# Native
+.kotlin/
+
 # Metro
 .metro-health-check*
 
-# debug
+# Logs & env
+*.log
+.env
+.env.local
+.env*.local
+
+# Debug
 npm-debug.*
 yarn-debug.*
 yarn-error.*
 
-# macOS
-.DS_Store
+# Misc
 *.pem
-
-# local env files
-.env*.local
-
-# typescript
 *.tsbuildinfo
+.DS_Store
 
-# generated native folders
-/ios
-/android
+# Editor / OS
+.vscode/
+.idea/
